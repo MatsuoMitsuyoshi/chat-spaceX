@@ -12,10 +12,11 @@
         margin-top: 35px;
       }
       &__members {
-        @include flexbox;
-        color: $light_gray;
+        color: #999;
+        display: flex;
         font-size: 12px;
         margin-top: 15px;
+        list-style: none;
         .member {
           display: inline-block;
           padding-right: 5px;
@@ -24,34 +25,34 @@
     }
     .right-header {
       border: 1px solid $light_blue;
-      color: $light_blue;
       float: right;
       height: 40px;
       line-height: 40px;
       margin-top: 28px;
       padding: 0 20px;
-      &__button {
+      .right-header__button {
         color: $light_blue;
-        text-decoration: none;
       }
     }
   }
 
   .messages {
-    background-color: #FAFAFA;
+    background-color: #fafafa;
     box-sizing: border-box;
+    height: calc(100vh - 100px - 90px);
     padding: 46px 40px 0;
-    height: calc(100% - 100px - 90px);
+    overflow: scroll;
     .message {
+      margin-bottom: 40px;
       .upper-message {
         display: flex;
         &__user-name {
-          color: $black;
+          color: #434a54;
           font-size: 16px;
           font-weight: bold;
         }
         &__date {
-          color: $light_gray;
+          color: #999;
           font-size: 12px;
           padding-left: 10px;
         }
@@ -59,23 +60,25 @@
       .lower-message {
         margin-top: 10px;
         &__content {
-          color: $black;
+          color: #434a54;
           font-size: 14px;
-          margin-bottom: 40px;
+          margin-bottom: 10px
         }
       }
     }
   }
 
   .form {
-    background-color: #DDDDDD;
+    background-color: #dddddd;
     box-sizing: border-box;
     height: 90px;
-    padding: 20px 50px 20px 40px;
+    padding: 20px 40px 20px 40px;
     &__message {
+      box-sizing: border-box;
       border: none;
       float: left;
       height: 50px;
+      padding: 0 10px;
       width: calc(100% - 150px);
     }
     &__mask {
