@@ -73,6 +73,7 @@ gem 'font-awesome-rails'
 gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'fog-aws'
 
 group :production do
   gem 'unicorn'
