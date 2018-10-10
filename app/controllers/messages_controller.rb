@@ -4,6 +4,10 @@ class MessagesController < ApplicationController
   def index
     @message = Message.new
     @messages = @group.messages.includes(:user)
+    respond_to do |format|
+      format.html #html形式のアクセスの場合 何もなし
+      format.json { @new_messages = @messages.where('id > ?', params[:id]) } #json形式のアクセスの場合 最新（id>?）のものがあれば、@new_messagesに代入
+    end
   end
 
   def create

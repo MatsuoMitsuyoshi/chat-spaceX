@@ -47,28 +47,28 @@ $(function() {
   })
 
   //自動更新機能
- //  setInterval(function(){
- //   if (location.href.match(/\/groups\/\d+\/messages/)){
- //     var message_id = $('.message').last().data('message-id')
- //     $.ajax({
- //       type: 'GET',
- //       url: location.href,
- //       data: {id: message_id},
- //       dataType: 'json'
- //     })
- //     .done(function(messages){
- //       messages.forEach(function(message){
- //         if (message.id > message_id) {
- //           var html = buildHTML(message);
- //           $('.messages').append(html);
- //         }
- //       })
- //     })
- //     .fail(function(message){
- //       alert("自動更新に失敗しました");
- //     })
- //   }
- // }, 5000);
+  setInterval(function(){
+   if (location.href.match(/\/groups\/\d+\/messages/)){
+     var message_id = $('.message').last().data('message-id')
+     $.ajax({
+       type: 'GET',
+       url: location.href,
+       data: {id: message_id},
+       dataType: 'json'
+     })
+     .done(function(messages){
+       messages.forEach(function(message){
+         if (message.id > message_id) {
+           var html = buildHTML(message);
+           $('.messages').append(html);
+         }
+       })
+     })
+     .fail(function(message){
+       alert("自動更新に失敗しました");
+     })
+   }
+ }, 5000);
 });
 
 
