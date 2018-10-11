@@ -32,7 +32,7 @@ $(document).on('turbolinks:load', function() {
     $.ajax({
       type: 'GET',
       url: '/users',
-      data: {name: input},
+      data: {keyword: input},
       dataType: 'json'
     })
     //対象ユーザーありの時

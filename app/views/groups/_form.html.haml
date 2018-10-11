@@ -17,7 +17,7 @@
 
     .chat-group-form__field--right
       .chat-group-form__search.clearfix
-        = f.text_field :id, class: 'chat-group-form__input chat-member-search-field', placeholder: '追加したいユーザー名を入力してください'
+        = f.text_field :keyword, class: 'chat-group-form__input chat-member-search-field', placeholder: '追加したいユーザー名を入力してください', value: ''
       .user-search-result
 
   .chat-group-form__field.clearfix
